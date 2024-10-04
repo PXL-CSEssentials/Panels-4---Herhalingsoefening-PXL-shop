@@ -98,10 +98,10 @@ meest rechtse kolom heeft een lettergrootte van 12.
 
 ***Variabelen:***
 
--   Declareer een string, *output,* waarin de tekst wordt bewaard die
+-   Declareer een string, *Output,* waarin de tekst wordt bewaard die
     getoond wordt in de meest rechtse kolom.
 
--   Declareer een variabele, *totalPrice*, waarin de huidige totaalprijs
+-   Declareer een variabele, *TotalPrice*, waarin de huidige totaalprijs
     wordt bewaard van alle reeds toegevoegde producten.
 
 **2.2 Timer**
