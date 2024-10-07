@@ -21,9 +21,9 @@ namespace Panels_4___Herhalingsoefening_PXL_shop
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string Output;
-        private double TotalPrice;
-        private DispatcherTimer Timer;
+        private string _output;
+        private double _totalPrice;
+        private DispatcherTimer _timer;
 
         public MainWindow()
         {
@@ -31,16 +31,16 @@ namespace Panels_4___Herhalingsoefening_PXL_shop
             RandomBackground();
             StartTimer();
 
-            Output = "";
-            TotalPrice = 0;
+            _output = "";
+            _totalPrice = 0;
         }
 
         private void StartTimer()
         {
-            Timer = new DispatcherTimer();
-            Timer.Tick += TimerTick;
-            Timer.Interval = TimeSpan.FromSeconds(1);
-            Timer.Start();
+            _timer = new DispatcherTimer();
+            _timer.Tick += TimerTick;
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -79,16 +79,16 @@ namespace Panels_4___Herhalingsoefening_PXL_shop
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            Output = Output + $"{amountTextBox.Text} x {nameTextBox.Text}\n";
-            TotalPrice = TotalPrice +
+            _output = _output + $"{amountTextBox.Text} x {nameTextBox.Text}\n";
+            _totalPrice = _totalPrice +
                 (Convert.ToInt32(amountTextBox.Text) *
                 Convert.ToDouble(priceTextBox.Text));
-            ticketTextBox.Text = Output;
+            ticketTextBox.Text = _output;
         }
 
         private void checkOutButton_Click(object sender, RoutedEventArgs e)
         {
-            ticketTextBox.Text = Output + $"\n\n{FrameResult(TotalPrice.ToString())}\n\n\nPXL - Shop";
+            ticketTextBox.Text = _output + $"\n\n{FrameResult(_totalPrice.ToString())}\n\n\nPXL - Shop";
         }
 
         private void newOrderButton_Click(object sender, RoutedEventArgs e)
@@ -97,8 +97,8 @@ namespace Panels_4___Herhalingsoefening_PXL_shop
             nameTextBox.Text = "";
             amountTextBox.Text = "";
             priceTextBox.Text = "";
-            Output = "";
-            TotalPrice = 0;
+            _output = "";
+            _totalPrice = 0;
         }
     }
 }
